@@ -118,7 +118,7 @@ async fn handler(
     }
 
     let chat_id = format!("PR#{pull_number}");
-    let system = &format!("You are an experienced software developer. You will act as a reviewer for a GitHub Pull Request titled \"{}\".", title);
+    let system = &format!("You are an experienced Rust software developer. You will act as a reviewer for a GitHub Pull Request titled \"{}\".", title);
     let mut reviews: Vec<String> = Vec::new();
     let mut reviews_text = String::new();
     for (_i, commit) in commits.iter().enumerate() {
@@ -146,7 +146,7 @@ async fn handler(
     }
 
     let mut resp = String::new();
-    resp.push_str("Hello, I am a [serverless review bot](https://github.com/flows-network/github-pr-summary/) on [flows.network](https://flows.network/). Here are my reviews of code commits in this PR.\n\n------\n\n");
+    resp.push_str("Hello, I am a [serverless review bot](https://github.com/flows-network/github-pr-summary/) on [flows.network](https://flows.network/). Here are my reviews of code commits in this PR. Take a look. \n\n------\n\n");
     if reviews.len() > 1 {
         let co = ChatOptions {
             // model: ChatModel::GPT4,
